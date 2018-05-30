@@ -26,13 +26,22 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+% number of features
+n = size(X,2);
 
-
-
-
-
-
-
+% Calculate mean & std
+mu = [mean(X(:,1))];
+sigma = [std(X(:,1))];
+X_norm = [ ((X(:,1) .- mu(1)) ./ sigma(1)) ];
+for col = 2:n
+  mu = [mu mean(X(:,col))];
+  sigma = [sigma std(X(:,col))];
+  
+  % Normalize feature col
+  F_norm = (X(:,col) .- mu(col)) ./ sigma(col);
+  
+  X_norm = [X_norm F_norm];
+end
 
 % ============================================================
 
