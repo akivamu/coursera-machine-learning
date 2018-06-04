@@ -19,6 +19,19 @@ grad = zeros(size(theta));
 
 
 
+h = sigmoid( X * theta);
+clippedTheta = theta;
+clippedTheta(1) = 0;
+
+J = (1/m) * sum( -y' * log(h) - (1.-y')*log(1-h)  ) + (lambda/2/m) * sum(clippedTheta .^ 2);
+
+
+grad(1) = (1/m) * sum( (h .- y)' * X(:,1) );
+
+for n=2:size(theta)
+  grad(n) = (1/m) * sum( (h .- y)' * X(:,n) ) + (lambda/m) * theta(n);
+
+
 
 
 
