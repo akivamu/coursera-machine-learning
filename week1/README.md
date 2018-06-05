@@ -17,8 +17,8 @@
 The machine first learns from the history data, then uses those knowledge to make
 prediction.  
 E.g. the data of Housing Price. Given the dataset with these information:  
-  - House's number of rooms (input 1)  
-  - House's area (input 2)  
+  - House's number of rooms (input or feature 1)  
+  - House's area (input or feature 2)  
   - House's price (output)  
 
 ## Model
@@ -50,7 +50,7 @@ Compare predicted output to training data's output, to see how good the model is
 For convenience to compare predicted vs real output, we use **Cost function**.
 
 ### Cost function  
-Cost function is a function of theta:  
+Cost function is a function of theta for model with 1 feature `theta1`:  
 ![](cost-function.png)  
 It describes the average difference between predicted output and real
 output in the training data.
@@ -67,6 +67,7 @@ So if this cost function is minimum, we found the best model (and best theta).
 ## Gradient Descent
 
 ![](gradient-descent.png)  
+`theta_j` is parameter for feature `j`.  
 `alpha` is learning rate - how fast we want to find final value theta. Careful if too fast.  
 The derivative part is to find the changing rate of Cost function `J`.  
 
@@ -77,3 +78,6 @@ changing rate of `J` (derivative) becomes smaller and smaller.
 
 Now we break the derivative of `J`:  
 ![](derivative-j.png)  
+
+For multi features:  
+![](gradient-descent-multivar.png)  
