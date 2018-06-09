@@ -45,12 +45,12 @@ tune theta into final value.
 **Finding model = finding theta**  
 
 **How to find theta**  
-=> We try and try and try difference of parameters, until found the best one.  
+=> There are 2 ways:  
+  - We keep trying difference of parameters, until found the best one. One method is
+  Gradient Descent.  
+  - We calculate at once, like using Normal Equation.  
 
-**How to perform trying?**  
-=> By various of algorithms: Gradient Descent,...
-
-**How to know if the parameter is the best?**  
+**Using Gradient Descent, how to know if the parameter is the best?**  
 => Feed all training data's input to current model to get the predicted output.
 Compare predicted output to training data's output, to see how good the model is.  
 For convenience to compare predicted vs real output, we use **Cost function**.
