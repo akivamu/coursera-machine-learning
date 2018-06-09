@@ -30,6 +30,12 @@ Also known as **hypothesis function**, denoted by `h(x)`, so `y = h(x)`.
 E.g. this is a simple linear model:  
 ![](hypothesis-function.png)  
 
+Hypothesis funtion for `n` features:  
+![](hypothesis-function-multivar.png)  
+
+Rewrite as vector:  
+![](h-vectorized.png)  
+
 ### Theta - the parameter  
 Theta is the parameter of model. It is all the machine needs to make prediction.  
   - At first, before training, theta is far from perfect. Model predict very bad and inaccurate.  
