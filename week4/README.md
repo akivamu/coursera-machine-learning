@@ -1,8 +1,38 @@
+# Recall what we learnt so far
+
+## Regression
+
+Hypothesis function `h(x)` can be **linear, quadratic, cubic or any degree**.  
+For some problems, **increase the function degree** can make model more fitting, accurate.  
+
+Cost function `J(theta)` has fixed degree. We can represent Cost function the same for 
+all problems.  
+
+Gradient Descent is method to find `theta`, so that Cost function `J(theta)` is minimum.  
+One other method is Normal Equation.  
+
+In short, Hypothesis function could varies alot, but Cost function and Gradient Descent stay the same.  
+
+**Reduce degree, make it linear:**  
+We can always reduce degree, by introduce new feature: `x + x^2` become `x1 + x2`, with `x1 = x` and `x2 = x^2`  
+So all problems could be represented in linear form.
+
+## Classification
+
+For discrete output set, `h(x)` need to be limited into [0,1]. Use sigmoid function for that.  
+
+For multiclass, use one-vs-all method.  
+
+
 # Neural network
 
-For non-linear hypothesis, number of features are too big, calculation is slow.  
-=> Neural network: the idea to split into layers, mimic brain.
+For non-linear hypothesis, we can transform into linear by introducing new features.  
+The more complex problem, the more features need to be added.  
 
+For example, recognize an image with 20x20 will introduce 400 features.  
+Standard hypothesis function and optimization will be very slow.  
+
+=> Neural network: the idea to split into layers, mimic brain.
 
 ## Model represention
 
