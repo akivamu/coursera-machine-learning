@@ -49,17 +49,22 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
+% ==== Method 1: For loop 
+options = optimset('GradObj', 'on', 'MaxIter', 100); % Optimizer options
 
-
-
-
-
-
-
-
-
-
-
+% For each class
+for k = 1:num_labels
+  initial_theta = zeros(n + 1, 1);
+  
+  % Mark output value k
+  output = y == k;
+  
+  % Do optimize for theta
+  [theta, cost] = fminunc(@(t)(lrCostFunction(t, X, output, lambda)), initial_theta, options);
+  
+  % Collect result for each class
+  all_theta(k,:) = theta';
+end
 % =========================================================================
 
 
