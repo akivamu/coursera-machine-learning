@@ -64,3 +64,22 @@ Input layer `x` can be seemed as layer 1, denoted by a<sup>1</sup>
 
 Then we got final hypothesis  
 ![](hypothesis.png)  
+
+# Programming exercise
+
+The problem here is handwritten (number) recognization.  
+Training data is list of 20x20 images.  
+So, each sample:  
+  - Input has 400 features.  
+  - Output has 10 classes
+
+There are 2 parts:  
+  - Regression  
+  - Neural network  
+
+For Regression part, we do as before: find theta by gradient descent, apply one-vs-all for each class and predict. Very similar to last week.  
+
+For Neural network part, we don't do much, because theta is given.  
+All we need is use theta to compute activation for each layer, and output result.  
+
+Hoping network will teach how to make neural network.  
