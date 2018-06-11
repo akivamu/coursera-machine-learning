@@ -30,11 +30,9 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+probabilitiesForEachClass = sigmoid(X * all_theta');
 
-
-
-
-
+[ignored p] = max(probabilitiesForEachClass, [], 2);
 
 % =========================================================================
 
