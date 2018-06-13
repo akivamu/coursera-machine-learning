@@ -97,6 +97,14 @@ Theta1_grad /= m;
 % Regularization
 J = J + lambda/2/m * ( sum(Theta1(:,2:end)(:) .^ 2) + sum(Theta2(:,2:end)(:) .^ 2) );
 
+% Strip 1st column
+strippedTheta2 = [zeros(size(Theta2, 1), 1) Theta2(:,2:end)];
+strippedTheta1 = [zeros(size(Theta1, 1), 1) Theta1(:,2:end)];
+
+Theta2_grad += lambda/m * strippedTheta2;
+Theta1_grad += lambda/m * strippedTheta1;
+
+
 % -------------------------------------------------------------
 
 % =========================================================================
