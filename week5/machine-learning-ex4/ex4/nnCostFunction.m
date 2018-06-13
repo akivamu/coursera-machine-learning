@@ -63,6 +63,7 @@ Theta2_grad = zeros(size(Theta2));
 %
 
 for i=1:m
+  % Forward
   a1 = [1 X(i,:)]';
 
   z2 = Theta1 * a1;
@@ -71,19 +72,30 @@ for i=1:m
   z3 = Theta2 * a2;
   a3 = sigmoid(z3);
   
-  h = a3;
-  
   yVec = zeros(num_labels,1);
   yVec(y(i)) = 1;
   
+  % Cost
+  h = a3;
   J = J + sum(-yVec .* log(h) .- (1-yVec).*log(1-h));
+  
+  % Backpropagation
+  delta3 = a3 .- yVec;
+  
+  delta2 = Theta2' * delta3 .* [1;sigmoidGradient(z2)];
+  delta2 = delta2(2:end);
+  
+  Theta2_grad += delta3 * a2';
+  Theta1_grad += delta2 * a1';
+  
 end
 
-J = J / m;
+J /= m;
+Theta2_grad /= m;
+Theta1_grad /= m;
 
 % Regularization
 J = J + lambda/2/m * ( sum(Theta1(:,2:end)(:) .^ 2) + sum(Theta2(:,2:end)(:) .^ 2) );
-
 
 % -------------------------------------------------------------
 
