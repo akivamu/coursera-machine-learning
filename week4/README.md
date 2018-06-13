@@ -82,4 +82,4 @@ For Regression part, we do as before: find theta by gradient descent, apply one-
 For Neural network part, we don't do much, because theta is given.  
 All we need is use theta to compute activation for each layer, and output result.  
 
-Hoping network will teach how to make neural network.  
+Hoping next week will teach how to make neural network.  
