@@ -20,12 +20,17 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
+m = size(idx,1);
+for i=1:m
+  minLen = 99999;
+  for j=1:K
+    len = norm(X(i,:) - centroids(j,:));
+    if (len < minLen)
+        minLen = len;
+      idx(i) = j;
+    end  
+  end
+end
 
 % =============================================================
 
