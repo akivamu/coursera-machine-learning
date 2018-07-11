@@ -26,12 +26,20 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+for centroidIndex=1:K
 
+  % Find points belong to centroid
+  pointsBelongToCentroidI = [];
+  for inputIndex=1:m
+    if (idx(inputIndex) == centroidIndex)
+      pointsBelongToCentroidI = [pointsBelongToCentroidI; X(inputIndex,:)];
+    end
+  end
 
-
-
-
-
+  % Calculate new position
+  centroids(centroidIndex,:) = sum(pointsBelongToCentroidI) / size(pointsBelongToCentroidI,1);
+  
+end
 
 % =============================================================
 
