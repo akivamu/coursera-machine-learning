@@ -40,28 +40,12 @@ Theta_grad = zeros(size(Theta));
 %                     partial derivatives w.r.t. to each element of Theta
 %
 
-sum = 0;
-for i=1:num_movies
-  for j=1:num_users
-    if (R(i,j) == 1)
-      sum += (Theta(j,:) * X(i,:)' - Y(i,j))^2;
-    end  
-  end  
-end
+errorMatrix = (X * Theta' .- Y) .^2 ;
 
-J = sum / 2;
+% Remove non ratings
+errorMatrix = errorMatrix .* R;
 
-
-
-
-
-
-
-
-
-
-
-
+J = sum(sum(errorMatrix)) / 2;
 
 % =============================================================
 
