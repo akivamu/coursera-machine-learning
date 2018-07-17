@@ -47,9 +47,17 @@ errorMatrix = errorMatrix .* R;
 
 J = sum(sum(errorMatrix .^2)) / 2;
 
+% Regularization
+J += sum(sum(Theta .^ 2)) * lambda / 2;
+J += sum(sum(X .^ 2)) * lambda / 2;
+
 
 X_grad = errorMatrix * Theta;
+X_grad .+= lambda * X;
+
+
 Theta_grad = errorMatrix' * X;
+Theta_grad .+= lambda * Theta;
 
 
 % =============================================================
