@@ -40,12 +40,17 @@ Theta_grad = zeros(size(Theta));
 %                     partial derivatives w.r.t. to each element of Theta
 %
 
-errorMatrix = (X * Theta' .- Y) .^2 ;
+errorMatrix = X * Theta' .- Y ;
 
 % Remove non ratings
 errorMatrix = errorMatrix .* R;
 
-J = sum(sum(errorMatrix)) / 2;
+J = sum(sum(errorMatrix .^2)) / 2;
+
+
+X_grad = errorMatrix * Theta;
+Theta_grad = errorMatrix' * X;
+
 
 % =============================================================
 
