@@ -20,7 +20,7 @@ iterations = 200000;
 fprintf('Gradient Descent with Sigmoid hypothesis...\n');
 
 % Training
-theta = gradientDescent(X, y, initial_theta, alpha, iterations, @hypothesisSigmoid, @costAndGradientLog);
+[theta cost] = gradientDescent(X, y, initial_theta, alpha, iterations, @hypothesisSigmoid, @costAndGradientLog);
 
 fprintf('theta: \n');
 fprintf(' %f \n', theta);
@@ -39,3 +39,6 @@ ylabel('Exam 2 score')
 % Specified in plot order
 legend('Admitted', 'Not admitted')
 hold off;
+
+%==== Plot learning curve
+plotLearningCurve(cost)
