@@ -25,8 +25,28 @@ We got `theta` = [-17.628695 0.146062 0.140513]
 
 ## Classifier 2 - Use step function instead of sigmoid
 
-Now, instead of using sigmoid as hypothesis function, we use step function.
+Now, instead of using sigmoid as hypothesis function, we use step function:
+
+- Hypothesis: `hypothesisStep.m`
+- Cost function: `costAndGradientLog.m`
 
 We got `theta` = [-18.618330 0.155755 0.152980]
 
 There is not much difference to when using sigmoid.
+
+## Classifier 3 - Use MSE as cost function
+
+Now, instead of Log, we use MSE as cost function:
+
+- Hypothesis: `hypothesisStep.m`
+- Cost function: `costAndGradientMSE.m`
+
+We got `theta` = [-18.618330 0.155755 0.152980]
+
+It's similar to classifier 2! What? It's because the gradient formula is not changed for both these cost function:
+
+MSE ![costMSE](costMSE.png)
+
+Log ![costLog](costLog.png)
+
+Same gradient ![gradient](gradient.png)
