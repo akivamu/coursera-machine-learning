@@ -12,6 +12,7 @@ X = data(:, [1, 2]); y = data(:, 3);
 %==== Training
 
 % Initialize fitting parameters
+X = processInput(X);
 X = [ones(m, 1) X];
 initial_theta = zeros(n + 1, 1);
 
