@@ -97,6 +97,10 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 [theta, cost] = ...
 	fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);
 
+%  Optimize by Gradient Descent
+%[theta, cost] = gradientDescent(X, y, initial_theta, 0.003, 200000);
+%cost = cost(length(cost));
+
 % Print theta to screen
 fprintf('Cost at theta found by fminunc: %f\n', cost);
 fprintf('Expected cost (approx): 0.203\n');
