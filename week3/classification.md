@@ -1,4 +1,4 @@
-# Week 3 keynote
+# Week 3: Classification
 
 ## Classification
 
