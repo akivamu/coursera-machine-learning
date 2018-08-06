@@ -12,11 +12,12 @@ def gen_circle_dataset(total_samples, outter_circle_r, outter_circle_var, inner_
     for degree in range(0,360):
         x = inner_circle_r * math.cos(degree) + random.uniform(-outter_circle_var, outter_circle_var)/2
         y = inner_circle_r * math.sin(degree) + random.uniform(-outter_circle_var, outter_circle_var)/2
-        dataset.append([x,y,0])
+        dataset.append([x,y,2])
 
     return numpy.array(dataset)
 
-dataset = gen_circle_dataset(100, 6, 1, 2)
+dataset = gen_circle_dataset(100, 6, 0.5, 2)
+numpy.random.shuffle(dataset)
 output_file = open('circle.txt', 'w')
 for x, y, label in dataset:
     print x,",",y,",",label
